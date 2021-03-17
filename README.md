@@ -20,7 +20,7 @@ vue add router
 ```
 We could have also added router initially by using a custom preset instead of default. If you activate history mode, you will not be able to run a static server anymore.
 ##Deployment
-If you don't have one, make a file called vue.config.js in your root directory. Inside, add the code
+If you don't have one, make a file called `vue.config.js` in your root directory. Inside, add the code
 ```
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
@@ -28,8 +28,8 @@ module.exports = {
     : '/'
 }
 ```
-and change /my-project/ to your project name if using GitHub Pages with the URL "https://your-name.github.io/my-project/".<br>
-Once again in your root directory, create a file called deploy.sh and add the code
+and change `/my-project/` to your project name if using GitHub Pages with the URL "https://your-name.github.io/my-project/".<br>
+Once again in your root directory, create a file called `deploy.sh` and add the code
 ```
 #!/usr/bin/env sh
 
@@ -57,3 +57,4 @@ git commit -m 'deploy'
 
 cd -
 ```
+The command `npm run build` will build our app for production.
