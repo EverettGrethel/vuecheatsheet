@@ -57,4 +57,4 @@ git commit -m 'deploy'
 
 cd -
 ```
-The command `npm run build` will build our app for production.
+The command `npm run build` will build our app for production. Uncomment the line of code that corresponds to your URL and add your username and/or repo instead of `USERNAME` and `REPO`.
