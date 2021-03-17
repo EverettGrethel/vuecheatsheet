@@ -19,7 +19,7 @@ To add Vue Router or other CLI plugins, run
 vue add router
 ```
 We could have also added router initially by using a custom preset instead of default. If you activate history mode, you will not be able to run a static server anymore.
-##Deployment
+## Deployment
 If you don't have one, make a file called `vue.config.js` in your root directory. Inside, add the code
 ```
 module.exports = {
