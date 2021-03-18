@@ -34,4 +34,4 @@ To shorten having to write `git subtree push --prefix dist origin gh-pages`, add
 [alias]
     stpp = subtree push --prefix
 ```
-which will allow you to instead write `git stpp dist origin gh-pages` to push
+which will allow you to instead write `git stpp dist origin gh-pages` to push.
