@@ -20,41 +20,18 @@ vue add router
 ```
 We could have also added router initially by using a custom preset instead of default. If you activate history mode, you will not be able to run a static server anymore.
 ## Deployment
-If you don't have one, make a file called `vue.config.js` in your root directory. Inside, add the code
+In your console, run 
 ```
-module.exports = {
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/my-project/'
-    : '/'
-}
-```
-and change `/my-project/` to your project name if using GitHub Pages with the URL "https://your-name.github.io/my-project/".<br>
-Once again in your root directory, create a file called `deploy.sh` and add the code
-```
-#!/usr/bin/env sh
-
-# abort on errors
-set -e
-
-# build
 npm run build
-
-# navigate into the build output directory
-cd dist
-
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
-git init
-git add -A
-git commit -m 'deploy'
-
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
-
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
-
-cd -
 ```
-The command `npm run build` will build our app for production. Uncomment the line of code that corresponds to your URL and add your username and/or repo instead of `USERNAME` and `REPO`.
+This will make a new /dist folder. Make sure it is included in your .gitignore file. Now push to Github, publish your GitHub Pages (if that is what you are using), and visit `https://<USER_NAME>.github.io/<REPO_NAME>/dist`. If you get any 404 missing file errors, one option is to create a subtree for your dist folder. To do this, go in your console and run
+```
+git subtree push --prefix dist origin gh-pages
+```
+Then, go to your Github Pages and change Source Branch to gh-pages. Give it some time to publish.<br>
+To shorten having to write `git subtree push --prefix dist origin gh-pages`, add this alias to your global .gitconfig file:
+```
+[alias]
+    stpp = subtree push --prefix
+```
+which will allow you to instead write `git stpp dist origin gh-pages` to push.
